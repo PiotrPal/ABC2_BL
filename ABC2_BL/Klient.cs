@@ -2,6 +2,8 @@
 {
     public class Klient
     {
+        public static int Licznik { get; set; }
+
         private string nazwisko;
 
         public string Nazwisko
@@ -13,8 +15,7 @@
             }
             set 
             {
-                //dodakowy kod
-                nazwisko = value;
+                    nazwisko = value;
             }
         }
         public string Imie { get; set; }
