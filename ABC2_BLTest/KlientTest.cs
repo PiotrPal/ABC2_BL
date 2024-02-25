@@ -73,6 +73,36 @@ namespace ABC2_BLTest
             Assert.AreEqual(3, Klient.Licznik);
         }
 
+        [TestMethod]
+        public void ZwalidujTest()
+        {
+            var klient = new Klient();
+
+            klient.Nazwisko = "Nowak";
+            klient.Email = "email@gmail.com";
+            var expected = true;
+
+            var accual = klient.Zwaliduj();
+
+            Assert.AreEqual(expected, accual);
+        }
+
+        [TestMethod]
+        public void ZwalidujBrakNazwiskaTest()
+        {
+            var klient = new Klient();
+
+            klient.Email = "email@gmail.com";
+            var expected = false;
+
+            var klient1 = new Klient(100);
+            var klient2 = new Klient();
+
+            var accual = klient.Zwaliduj();
+
+            Assert.AreEqual(expected, accual);
+        }
+
 
     }
 }
