@@ -16,7 +16,9 @@ namespace ABC2_BL
         }
         public int ZamowienieID { get; private set; }
         public DateTimeOffset? DataZamowienia { get; set; }
-
+        public List<PozycjaZamowienia> pozycjeZamowienia { get; set; }
+        public int KlientID { get; set; }
+        public int AdresDostawyID { get; set; }
         public Zamowienie Pobierz(int zamowienieID)
         {
             //kod kotry pobiera zdefiniowane zamowienie

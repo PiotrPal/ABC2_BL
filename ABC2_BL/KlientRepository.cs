@@ -8,7 +8,14 @@ namespace ABC2_BL
 {
     public class KlientRepository
     {
-        public bool Zapisz()
+        private AdresRepository adresRepository {  get; set; }
+
+        public KlientRepository()
+        {
+            adresRepository = new AdresRepository();
+        }
+
+        public bool Zapisz(Klient klient)
         {
             // kod kotry zapisuje zdefiniowanego klienta
             return true;
@@ -16,6 +23,7 @@ namespace ABC2_BL
         public Klient Pobierz(int klientID)
         {
             Klient klient = new Klient(klientID);
+            klient.ListaAdresow = adresRepository.PobierzPoKlientID(klientID).ToList();
 
             // kod ktory pobiera okreslonego klienta
 
