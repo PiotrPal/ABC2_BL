@@ -4,7 +4,7 @@ namespace ABC2_BL
 {
     public class Klient
     {
-        public Klient()
+        public Klient() : this(0)
         {
             
         }
@@ -12,7 +12,10 @@ namespace ABC2_BL
         public Klient(int klientID)
         {
               KlientID = klientID;
+              ListaAdresow = new List<Adres>();
         }
+
+        public List<Adres> ListaAdresow { get; set; }
         public static int Licznik { get; set; }
 
         private string nazwisko;
@@ -34,6 +37,7 @@ namespace ABC2_BL
         public string Email { get; set; }
 
         public int KlientID { get; private set; }
+        public int KlientTyp { get; set; }
         public string NazwiskoImie 
         {
            get
