@@ -83,5 +83,10 @@ namespace ABC2_BL
             //kod ktory pobiera wszystkich klientow
             return new List<Klient>();
         }
+
+        public override string ToString()
+        {
+            return NazwiskoImie;
+        }
     }
 }

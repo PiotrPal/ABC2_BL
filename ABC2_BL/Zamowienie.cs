@@ -39,5 +39,10 @@ namespace ABC2_BL
 
             return poprawne;
         }
+
+        public override string ToString()
+        {
+            return DataZamowienia + " ID[ " + ZamowienieID + " ] ";
+        }
     }
 }

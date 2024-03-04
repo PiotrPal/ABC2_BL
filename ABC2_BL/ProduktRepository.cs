@@ -12,10 +12,15 @@ namespace ABC2_BL
         {
             var produkt = new Produkt(produktID);
 
+            Object obiekt = new Object();
+
+            Console.WriteLine("obiekt: " + obiekt.ToString());
+            Console.WriteLine("obiekt: " + produkt.ToString());
+
             //kod kotry pobiera zdefiniowany produkt
 
             //tymczasowy kod
-            if(produktID == 2) 
+            if (produktID == 2) 
             {
                 produkt.NazwaProduktu = "Klocki";
                 produkt.Opis = "Lego samochod wyscigowy";
