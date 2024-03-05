@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ABC2_BL
 {
-    public class Produkt
+    public class Produkt : KlasaBazowa
     {
         public Produkt() { }
 
@@ -30,7 +30,7 @@ namespace ABC2_BL
             //kod ktory zapisuje zdefiniowany produkt
             return true;
         }
-        public bool Zwaliduj()
+        public override bool Zwaliduj()
         {
             var poprawne = true;
             if (string.IsNullOrWhiteSpace(NazwaProduktu))

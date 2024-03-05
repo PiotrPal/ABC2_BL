@@ -2,7 +2,7 @@
 
 namespace ABC2_BL
 {
-    public class Klient
+    public class Klient : KlasaBazowa
     {
         public Klient() : this(0)
         {
@@ -55,7 +55,7 @@ namespace ABC2_BL
             }
         }
 
-        public bool Zwaliduj()
+        public override bool Zwaliduj()
         {
             var czy_poprawne = true;
 

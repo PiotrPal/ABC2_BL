@@ -17,9 +17,24 @@ namespace ABC2_BL
 
         public bool Zapisz(Klient klient)
         {
-            // kod kotry zapisuje zdefiniowanego klienta
-            return true;
+            var sukces = true;
+
+            if (klient.maZmiany && klient.danePrawidlowe)
+            {
+                if (klient.jestNowy)
+                {
+                    //wywolanie procedury insert
+                }
+                else
+                {
+                    //data update
+                }
+            }
+
+
+            return sukces;
         }
+    
         public Klient Pobierz(int klientID)
         {
             Klient klient = new Klient(klientID);
