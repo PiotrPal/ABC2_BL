@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ABC2_BL
 {
-    public class Zamowienie
+    public class Zamowienie : KlasaBazowa
     {
         public Zamowienie() { }
 
@@ -29,7 +29,7 @@ namespace ABC2_BL
             //kod ktory zapisuje zdefiniowane zamownienie
             return true;
         }
-        public bool Zwaliduj()
+        public override bool Zwaliduj()
         {
             var poprawne = true;
             if (DataZamowienia == null)
@@ -38,6 +38,11 @@ namespace ABC2_BL
             }
 
             return poprawne;
+        }
+
+        public override string ToString()
+        {
+            return DataZamowienia + " ID[ " + ZamowienieID + " ] ";
         }
     }
 }

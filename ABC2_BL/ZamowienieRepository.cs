@@ -62,10 +62,25 @@ namespace ABC2_BL
 
             return wyswietlanieZamowienia;
         }
-        public bool Zapisz()
+        public bool Zapisz(Zamowienie zamowienie)
         {
-            //kod ktory zapisuje zdefiniowane zamownienie
-            return true;
+            var sukces = true;
+
+            if (zamowienie.maZmiany && zamowienie.danePrawidlowe)
+            {
+                if (zamowienie.jestNowy)
+                {
+                    //wywolanie procedury insert
+                }
+                else
+                {
+                    //data update
+                }
+            }
+
+
+            return sukces;
         }
+    
     }
 }

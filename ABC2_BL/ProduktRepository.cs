@@ -12,10 +12,15 @@ namespace ABC2_BL
         {
             var produkt = new Produkt(produktID);
 
+            Object obiekt = new Object();
+
+            Console.WriteLine("obiekt: " + obiekt.ToString());
+            Console.WriteLine("obiekt: " + produkt.ToString());
+
             //kod kotry pobiera zdefiniowany produkt
 
             //tymczasowy kod
-            if(produktID == 2) 
+            if (produktID == 2) 
             {
                 produkt.NazwaProduktu = "Klocki";
                 produkt.Opis = "Lego samochod wyscigowy";
@@ -24,10 +29,24 @@ namespace ABC2_BL
 
             return produkt;
         }
-        public bool Zapisz()
+        public bool Zapisz(Produkt produkt)
         {
-            //kod ktory zapisuje zdefiniowany produkt
-            return true;
+            var sukces = true;
+
+            if(produkt.maZmiany && produkt.danePrawidlowe)
+            {
+                if (produkt.jestNowy)
+                {
+                    //wywolanie procedury insert
+                }
+                else
+                {
+                    //data update
+                }
+            }
+
+           
+            return sukces;
         }
     }
 }
