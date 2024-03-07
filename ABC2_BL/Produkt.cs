@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,8 +18,16 @@ namespace ABC2_BL
 
         public int ProduktID { get; private set; }
         public decimal?  AktualnaCena { get; set; }
-        public string Opis {  get; set; }  
-        public string NazwaProduktu { get; set;}
+        public string Opis {  get; set; }
+        private string _NazwaProduktu;
+
+        public string NazwaProduktu
+        {
+            get {
+                return ObslugaString.wstawSpacje(_NazwaProduktu); 
+            }
+            set { _NazwaProduktu = value; }
+        }
 
         public Produkt Pobierz(int produktID) 
         { 
