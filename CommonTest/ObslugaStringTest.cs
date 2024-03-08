@@ -12,9 +12,9 @@ namespace CommonTest
         {
             var zrodlo = "KlockiLego";
             var expected = "Klocki Lego";
-           
 
-            var accual = ObslugaString.wstawSpacje(zrodlo);
+
+            var accual = zrodlo.wstawSpacje();
 
             Assert.AreEqual(expected, accual);
         }
@@ -25,7 +25,7 @@ namespace CommonTest
             var zrodlo = "Klocki Lego";
             var expected = "Klocki Lego";
 
-            var accual = ObslugaString.wstawSpacje(zrodlo);
+            var accual = zrodlo.wstawSpacje();
 
             Assert.AreEqual(expected, accual);
         }

@@ -24,7 +24,7 @@ namespace ABC2_BL
         public string NazwaProduktu
         {
             get {
-                return ObslugaString.wstawSpacje(_NazwaProduktu); 
+                return _NazwaProduktu.wstawSpacje(); 
             }
             set { _NazwaProduktu = value; }
         }
@@ -53,6 +53,12 @@ namespace ABC2_BL
         public override string ToString()
         {
             return NazwaProduktu;
+        }
+
+        public string Log()
+        {
+            var logText = "[" + ProduktID + "] " + NazwaProduktu + " Opis: " + Opis + " Status: " + stanObiektu.ToString();
+            return logText;
         }
     }
 }

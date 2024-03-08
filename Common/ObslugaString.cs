@@ -2,7 +2,7 @@
 {
     public static class ObslugaString
     {
-        public static string wstawSpacje(string zrodlo)
+        public static string wstawSpacje(this string zrodlo)
         {
             var wynik = string.Empty;
 
