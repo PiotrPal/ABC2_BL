@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ABC2_BL
 {
-    public class Produkt : KlasaBazowa
+    public class Produkt : KlasaBazowa, ILogowanie
     {
         public Produkt() { }
 
