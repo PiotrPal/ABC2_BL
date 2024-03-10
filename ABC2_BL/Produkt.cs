@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ABC2_BL
 {
-    public class Produkt : KlasaBazowa
+    public class Produkt : KlasaBazowa, ILogowanie
     {
         public Produkt() { }
 
@@ -17,8 +18,16 @@ namespace ABC2_BL
 
         public int ProduktID { get; private set; }
         public decimal?  AktualnaCena { get; set; }
-        public string Opis {  get; set; }  
-        public string NazwaProduktu { get; set;}
+        public string Opis {  get; set; }
+        private string _NazwaProduktu;
+
+        public string NazwaProduktu
+        {
+            get {
+                return _NazwaProduktu.wstawSpacje(); 
+            }
+            set { _NazwaProduktu = value; }
+        }
 
         public Produkt Pobierz(int produktID) 
         { 
@@ -44,6 +53,12 @@ namespace ABC2_BL
         public override string ToString()
         {
             return NazwaProduktu;
+        }
+
+        public string Log()
+        {
+            var logText = "[" + ProduktID + "] " + NazwaProduktu + " Opis: " + Opis + " Status: " + stanObiektu.ToString();
+            return logText;
         }
     }
 }

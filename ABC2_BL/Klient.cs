@@ -1,18 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using Common;
+using System.Collections.Generic;
 
 namespace ABC2_BL
 {
-    public class Klient : KlasaBazowa
+    public class Klient : KlasaBazowa, ILogowanie
     {
         public Klient() : this(0)
         {
-            
+
         }
 
         public Klient(int klientID)
         {
-              KlientID = klientID;
-              ListaAdresow = new List<Adres>();
+            KlientID = klientID;
+            ListaAdresow = new List<Adres>();
         }
 
         public List<Adres> ListaAdresow { get; set; }
@@ -22,14 +23,14 @@ namespace ABC2_BL
 
         public string Nazwisko
         {
-            get 
-            { 
-                //dodatkowy kod
-                return nazwisko; 
-            }
-            set 
+            get
             {
-                    nazwisko = value;
+                //dodatkowy kod
+                return nazwisko;
+            }
+            set
+            {
+                nazwisko = value;
             }
         }
         public string Imie { get; set; }
@@ -38,9 +39,9 @@ namespace ABC2_BL
 
         public int KlientID { get; private set; }
         public int KlientTyp { get; set; }
-        public string NazwiskoImie 
+        public string NazwiskoImie
         {
-           get
+            get
             {
                 string NazwiskoImie = Nazwisko;
                 if (!string.IsNullOrWhiteSpace(Imie))
@@ -59,7 +60,7 @@ namespace ABC2_BL
         {
             var czy_poprawne = true;
 
-            if (string.IsNullOrWhiteSpace(Nazwisko)) { 
+            if (string.IsNullOrWhiteSpace(Nazwisko)) {
                 czy_poprawne = false;
             }
             if (string.IsNullOrWhiteSpace(Email)) {
@@ -78,7 +79,7 @@ namespace ABC2_BL
             // kod ktory pobiera okreslonego klienta
             return new Klient();
         }
-        public List<Klient> Pobierz() 
+        public List<Klient> Pobierz()
         {
             //kod ktory pobiera wszystkich klientow
             return new List<Klient>();
@@ -87,6 +88,12 @@ namespace ABC2_BL
         public override string ToString()
         {
             return NazwiskoImie;
+        }
+
+        public string Log()
+        {
+            var logText = "[" + KlientID + "] " + NazwiskoImie + " Email: " + Email + " Status: " + stanObiektu.ToString();
+            return logText;
         }
     }
 }
